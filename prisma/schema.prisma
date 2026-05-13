@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Artist {
+  id        Int       @id @default(autoincrement())
+  slug      String    @unique
+  name      String
+  bio       String
+  region    String
+  tags      String
+  questions String
+  workTitle String
+  workMeta  String
+  workQuote String
+  workDesc  String
+  messages  Message[]
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  artistId  Int
+  artist    Artist   @relation(fields: [artistId], references: [id])
+  nickname  String   @default("익명")
+  question  String
+  content   String
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F5F3EE;
+  --color-header: #1A1916;
+  --color-gold: #C4954A;
+  --color-card: #ffffff;
+  --color-danger: #C0392B;
+  --color-muted: #888888;
+
+  --font-serif: var(--font-dm-serif);
+  --font-sans: var(--font-dm-sans);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F5F3EE;
+  color: #2c2c2c;
+  -webkit-tap-highlight-color: transparent;
+}
