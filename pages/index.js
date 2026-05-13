@@ -10,7 +10,7 @@ import MessageForm from '@/components/MessageForm';
 import MessageCard from '@/components/MessageCard';
 import ArtworkTab from '@/components/ArtworkTab';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const artists = await prisma.artist.findMany({ orderBy: { id: 'asc' } });
   return { props: { artists } };
 }
